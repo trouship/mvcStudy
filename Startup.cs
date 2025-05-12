@@ -8,6 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using MVCStudy.Data;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace MVCStudy
 {
@@ -24,6 +28,17 @@ namespace MVCStudy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<MVCStudyContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("MVCStudyContext")));
+
+            services.AddLocalization(options => { });
+
+            services.AddControllersWithViews()
+                .AddViewOptions(options =>
+                {
+                    options.HtmlHelperOptions.ClientValidationEnabled = true;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +56,15 @@ namespace MVCStudy
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Настраиваем локализацию здесь
+            var supportedCultures = new[] { new CultureInfo("ru-RU") };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(supportedCultures[0]),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseRouting();
 
