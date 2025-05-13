@@ -148,3 +148,4 @@ D:\_Лукьянов И.А\Prog\StudyTasks\ASP.NET\MVCStudy\obj\Debug\net5.0\Raz
 D:\_Лукьянов И.А\Prog\StudyTasks\ASP.NET\MVCStudy\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
 D:\_Лукьянов И.А\Prog\StudyTasks\ASP.NET\MVCStudy\obj\Debug\net5.0\Razor\Views\Movies\Edit.cshtml.g.cs
 D:\_Лукьянов И.А\Prog\StudyTasks\ASP.NET\MVCStudy\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
+D:\_Лукьянов И.А\Prog\StudyTasks\ASP.NET\MVCStudy\bin\Debug\net5.0\libman.json

@@ -59,12 +59,13 @@ namespace MVCStudy
 
             // Настраиваем локализацию здесь
             var supportedCultures = new[] { new CultureInfo("ru-RU") };
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture(supportedCultures[0]),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            });
+            app.UseRequestLocalization("ru-RU");
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture(supportedCultures[0]),
+            //    SupportedCultures = supportedCultures,
+            //    SupportedUICultures = supportedCultures
+            //});
 
             app.UseRouting();
 
